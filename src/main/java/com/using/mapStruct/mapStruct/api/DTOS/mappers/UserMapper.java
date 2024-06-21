@@ -18,6 +18,6 @@ public interface UserMapper {
     @Mapping(source = "fullNameMapped", target = "fullName")
     User userResponseToUser(UserResponse user);
 
-    @Mapping(source = "userNameRQ", target = "userName")
+    @Mapping(source = "userNameRQ", target = "user")
     User requestToEntity(UserRequest userRequest, User user);
 }

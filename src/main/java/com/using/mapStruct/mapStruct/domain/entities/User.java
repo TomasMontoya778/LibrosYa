@@ -22,7 +22,7 @@ public class User{
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @Column(name = "user_name" , nullable = false, length = 50)
-    private String userName;
+    private String user;
     @Column(name = "user_password", nullable = false, length = 100)
     private String password;
     @Column(name = "user_email", nullable = false, length = 100)

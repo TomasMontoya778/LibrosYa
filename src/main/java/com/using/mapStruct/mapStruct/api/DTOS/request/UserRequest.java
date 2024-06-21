@@ -31,7 +31,6 @@ public class UserRequest {
     @Size(min = 0, max = 20, message = "The Role exceeds the numbers of characters")
     @NotBlank(message = "Role is required")
     private String role;
-    
     private String reservation;
     private String loan;
 }

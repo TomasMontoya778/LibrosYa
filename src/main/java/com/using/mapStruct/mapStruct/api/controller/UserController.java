@@ -3,10 +3,13 @@ package com.using.mapStruct.mapStruct.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.using.mapStruct.mapStruct.api.DTOS.request.UserRequest;
 import com.using.mapStruct.mapStruct.api.DTOS.response.UserResponse;
 import com.using.mapStruct.mapStruct.infrastructure.abstract_services.interfaces.IUserService;
 
@@ -22,8 +25,8 @@ public class UserController {
     private final IUserService userService;
 
     @PostMapping
-    public ResponseEntity<Page<UserResponse>> insert(){
-        
+    public ResponseEntity<UserResponse> insert(@Validated @RequestBody UserRequest request){
+        return ResponseEntity.ok(this.userService.create(request));
     }
 
 }
