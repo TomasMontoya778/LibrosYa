@@ -3,6 +3,6 @@ package com.using.mapStruct.mapStruct.infrastructure.abstract_services.interface
 import com.using.mapStruct.mapStruct.api.DTOS.request.BookRequest;
 import com.using.mapStruct.mapStruct.api.DTOS.response.BookResponse;
 
-public interface IBookService extends CrudService<BookResponse, BookRequest, String>{
+public interface IBookService extends CrudService <BookRequest,BookResponse, String>{
 
 }

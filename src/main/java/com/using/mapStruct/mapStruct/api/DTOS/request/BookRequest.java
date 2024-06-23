@@ -24,7 +24,7 @@ public class BookRequest {
 
     @Size(min = 0, max = 50, message = "The gener exceeds the numbers of characters")
     @NotBlank(message = "Gener is required")
-    private String gener;
+    private String genre;
 
     @Size(min = 0, max = 20, message = "The isbn exceeds the numbers of characters")
     @NotBlank(message = "Isbn is required")

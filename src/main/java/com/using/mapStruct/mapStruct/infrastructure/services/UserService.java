@@ -21,9 +21,9 @@ public class UserService implements IUserService {
     private final UserRepository userRepository;
     @Override
     public UserResponse create(UserRequest request) {
-        User user = UserMapper.mapper.requestToEntity(request, new User());
-        UserResponse userResponse = UserMapper.mapper.userToUserResponse(user);
-        return userResponse;
+        // User user = UserMapper.mapper.requestToEntity(request, new User());
+        // UserResponse userResponse = UserMapper.mapper.userToUserResponse(user);
+        return null;
     }
 
     @Override
@@ -34,12 +34,12 @@ public class UserService implements IUserService {
 
     @Override
     public Page<UserResponse> getAll(int page, int size) {
-        if(page < 0)
-            page = 0;
-        PageRequest pageRequest = PageRequest.of(page, size);
-        Page<User> user = userRepository.findAll(pageRequest);
-        Page<UserResponse> userResponse = user.map(u -> UserMapper.mapper.userToUserResponse(u));
-        return userResponse;
+        // if(page < 0)
+        //     page = 0;
+        // PageRequest pageRequest = PageRequest.of(page, size);
+        // Page<User> user = userRepository.findAll(pageRequest);
+        // Page<UserResponse> userResponse = user.map(u -> UserMapper.mapper.userToUserResponse(u));
+        return null;
     }
 
     @Override

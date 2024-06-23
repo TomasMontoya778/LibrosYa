@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 public class UserResponse {
     private String id;
     private String fullNameMapped;
-    private String email;
-    private String role;
+    private String emailMapped;
+    private String roleMapped;
     private Set<ReservationResponseToUser> reservationResponseToUsers;
     private Set<LoanResponseToUser> loanResponseToUsers;
 }

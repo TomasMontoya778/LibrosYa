@@ -12,5 +12,5 @@ public class BookResponse {
     private String title;
     private String author;
     private String publicationYear;
-    private String gener;
+    private String genre;
 }

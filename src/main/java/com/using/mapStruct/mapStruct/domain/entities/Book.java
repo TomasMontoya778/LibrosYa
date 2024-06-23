@@ -1,6 +1,5 @@
 package com.using.mapStruct.mapStruct.domain.entities;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.*;
@@ -36,7 +35,7 @@ public class Book {
     @OneToMany(mappedBy = "book_id", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Set<Reservation> reservations = new HashSet<>();
+    private Set<Reservation> reservations;
 
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
     private Set<Loan> loan;
