@@ -51,8 +51,9 @@ public class BookService implements IBookService{
 
     @Override
     public BookResponse update(String id, BookRequest request) {
-        // TODO Auto-generated method stub
-        return null;
+        Book bookFound = this.find(id);
+        bookFound = BookMapper.mapper.requestToEntity(request);
+        return BookMapper.mapper.bookToBookResponse(this.bookRepository.save(bookFound));
     }
     
 
