@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LoanResponse {
     private String id;
-    private LocalDate loan_Date;
+    private LocalDate loan_date;
     private LocalDate return_date;
     private String status;
     private UserReponseToLoan userResponse;

@@ -32,7 +32,7 @@ public class BookService implements IBookService{
     }
     @Override
     public void delete(String id) {
-        // TODO Auto-generated method stub
+        this.bookRepository.delete(this.find(id));
     }
 
     @Override

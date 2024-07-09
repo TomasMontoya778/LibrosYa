@@ -45,4 +45,5 @@ public interface BookMapper {
     @Mapping(target = "loan", ignore = true)
     @Mapping(target = "reservations", ignore = true)
     Book requestToEntity(BookRequest request);
+
 }

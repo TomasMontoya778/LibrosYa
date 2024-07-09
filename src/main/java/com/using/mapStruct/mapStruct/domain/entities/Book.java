@@ -1,6 +1,6 @@
 package com.using.mapStruct.mapStruct.domain.entities;
 
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,8 +35,8 @@ public class Book {
     @OneToMany(mappedBy = "book_id", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Set<Reservation> reservations;
+    private List<Reservation> reservations;
 
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
-    private Set<Loan> loan;
+    private List<Loan> loan;
 }

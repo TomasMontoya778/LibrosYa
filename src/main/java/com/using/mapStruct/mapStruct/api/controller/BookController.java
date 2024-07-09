@@ -2,8 +2,11 @@ package com.using.mapStruct.mapStruct.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,4 +49,10 @@ public class BookController {
     public ResponseEntity<BookResponse> update(@PathVariable String id, @RequestBody BookRequest request){
         return ResponseEntity.ok(this.iBookService.update(id, request));
     }
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> delete(@PathVariable String id){
+        this.iBookService.delete(id);
+        String message = "Book was eliminated correctly";
+        return ResponseEntity.status(HttpStatus.OK).body(message);
+    }  
 }

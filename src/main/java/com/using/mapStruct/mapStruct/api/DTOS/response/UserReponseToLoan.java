@@ -1,6 +1,6 @@
 package com.using.mapStruct.mapStruct.api.DTOS.response;
 
-import java.util.Set;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,5 +13,5 @@ public class UserReponseToLoan {
     private String fullName;
     private String email;
     private String role;
-    private Set<ReservationResponseToUser> reservationResponseToUsers;
+    private List<ReservationResponseToUser> reservationResponseToUsers;
 }

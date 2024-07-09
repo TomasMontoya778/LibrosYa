@@ -21,6 +21,4 @@ public class LoanRequest {
     private String status;
     @NotBlank(message = "Book ID is required")
     private String book_id;
-    @NotBlank(message = "User ID is required")
-    private String user_id;
 }
