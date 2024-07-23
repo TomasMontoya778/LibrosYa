@@ -1,5 +1,6 @@
 package com.using.mapStruct.mapStruct.infrastructure.services;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,11 +29,12 @@ public class BookService implements IBookService{
         return BookMapper.mapper.bookToBookResponse(savedBook);
     }
     private Book find(String id) throws BadRequestException{
-        return this.bookRepository.findById(id).orElseThrow(() -> new BadRequestException("There are not book registered"));
+        return this.bookRepository.findById(id).orElseThrow(() -> new BadRequestException("There are not book registered with that ID"));
     }
     @Override
     public void delete(String id) {
-        // TODO Auto-generated method stub
+        Book book = this.find(id);
+        this.bookRepository.delete(book);
     }
 
     @Override
@@ -51,8 +53,12 @@ public class BookService implements IBookService{
 
     @Override
     public BookResponse update(String id, BookRequest request) {
-        // TODO Auto-generated method stub
-        return null;
+        Book bookFound = this.find(id);
+        Book book = BookMapper.mapper.requestToEntity(request);
+        BeanUtils.copyProperties(bookFound, book);
+        bookFound = this.bookRepository.save(bookFound);
+        BookResponse bookResponse = BookMapper.mapper.bookToBookResponse(book);
+        return bookResponse;
     }
     
 
