@@ -53,5 +53,9 @@ public class BookController {
         response.put("message", "The book has been deleted");
         return ResponseEntity.ok(response);
     }
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<BookResponse> update(@PathVariable String id, @Validated @RequestBody BookRequest bookRequest){
+        return ResponseEntity.ok(this.iBookService.update(id, bookRequest));
+    }
 
 }

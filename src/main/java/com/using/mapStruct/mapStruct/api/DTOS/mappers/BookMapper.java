@@ -7,6 +7,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -45,4 +46,9 @@ public interface BookMapper {
     @Mapping(target = "loan", ignore = true)
     @Mapping(target = "reservations", ignore = true)
     Book requestToEntity(BookRequest request);
+
+    @Mapping(target = "bookId", ignore = true)
+    @Mapping(target = "loan", ignore = true)
+    @Mapping(target = "reservations", ignore = true)
+    void updateBookRequestToEntity(BookRequest request, @MappingTarget Book book);
 }

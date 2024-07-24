@@ -1,6 +1,5 @@
 package com.using.mapStruct.mapStruct.infrastructure.services;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -50,16 +49,13 @@ public class BookService implements IBookService{
     public BookResponse getById(String id) {
         return BookMapper.mapper.bookToBookResponse(this.find(id));
     }
-
+    
     @Override
     public BookResponse update(String id, BookRequest request) {
         Book bookFound = this.find(id);
-        Book book = BookMapper.mapper.requestToEntity(request);
-        BeanUtils.copyProperties(bookFound, book);
-        bookFound = this.bookRepository.save(bookFound);
-        BookResponse bookResponse = BookMapper.mapper.bookToBookResponse(book);
+        BookMapper.mapper.updateBookRequestToEntity(request, bookFound);
+        BookResponse bookResponse = BookMapper.mapper
+        .bookToBookResponse(this.bookRepository.save(bookFound));
         return bookResponse;
     }
-    
-
 }

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class UserRequest {
     @Size(min = 0, max = 50, message = "The Username exceeds the numbers of characters")
     @NotBlank(message = "Username is required")
-    private String userNameRQ;
+    private String user;
 
     @Size(min = 0, max = 100, message = "The password exceeds the numbers of characters")
     @NotBlank(message = "Password is required")
@@ -31,6 +31,6 @@ public class UserRequest {
     @Size(min = 0, max = 20, message = "The Role exceeds the numbers of characters")
     @NotBlank(message = "Role is required")
     private String role;
-    private String reservation;
-    private String loan;
+    // private String reservation;
+    // private String loan;
 }
