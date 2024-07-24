@@ -32,8 +32,7 @@ public class BookService implements IBookService{
     }
     @Override
     public void delete(String id) {
-        Book book = this.find(id);
-        this.bookRepository.delete(book);
+        this.bookRepository.delete(this.find(id));
     }
 
     @Override

@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>17</java.version>
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 	</properties>
 	<dependencies>
@@ -101,8 +101,8 @@
     			<artifactId>maven-compiler-plugin</artifactId>
     			<version>3.8.1</version>
     			<configuration>
-        			<source>18</source> <!-- Dependiendo de la versión de Java de tu proyecto -->
-        			<target>18</target> <!-- Dependiendo de la versión de Java de tu proyecto -->
+        			<source>17</source> <!-- Dependiendo de la versión de Java de tu proyecto -->
+        			<target>17</target> <!-- Dependiendo de la versión de Java de tu proyecto -->
         			<annotationProcessorPaths>
             		<path>
                 		<groupId>org.mapstruct</groupId>

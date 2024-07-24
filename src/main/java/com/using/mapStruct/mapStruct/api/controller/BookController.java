@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +23,7 @@ import com.using.mapStruct.mapStruct.api.DTOS.request.BookRequest;
 import com.using.mapStruct.mapStruct.api.DTOS.response.BookResponse;
 import com.using.mapStruct.mapStruct.infrastructure.abstract_services.interfaces.IBookService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 
@@ -31,7 +34,7 @@ import lombok.AllArgsConstructor;
 public class BookController {
     @Autowired
     private final IBookService iBookService;
-
+    @Operation
     @PostMapping
     public ResponseEntity<BookResponse> insert(@Validated @RequestBody BookRequest bookRequest){
         return ResponseEntity.ok(this.iBookService.create(bookRequest));
@@ -57,5 +60,4 @@ public class BookController {
     public ResponseEntity<BookResponse> update(@PathVariable String id, @Validated @RequestBody BookRequest bookRequest){
         return ResponseEntity.ok(this.iBookService.update(id, bookRequest));
     }
-
 }

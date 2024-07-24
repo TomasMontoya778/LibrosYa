@@ -18,8 +18,6 @@ public class ReservationRequest {
     private String status;
     @NotNull(message = "Reservation Date is required")
     private LocalDate reservationDate;
-    @NotBlank(message = "User ID is required")
-    private String user;
     @NotBlank(message = "Book ID is required")
     private String book;
     

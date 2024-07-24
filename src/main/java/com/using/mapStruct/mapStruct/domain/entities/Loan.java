@@ -25,7 +25,7 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @Column(name = "loan_date", nullable = false)
-    private LocalDate load_date;
+    private LocalDate loan_date;
     @Column(name = "return_date", nullable = false)
     private LocalDate return_date;
     @Column(name = "status", nullable = false, length = 20)
